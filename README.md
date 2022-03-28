@@ -15,15 +15,16 @@
  &nbsp;
 
 ### MVP:
-* Plant Collections (a few of the most common houseplant categories)
-* Individual Plant Profiles:
+* Plant Profiles:
   * Nickname
   * Latin Name/Common Name
   * Adoption Date
+  * Location (dropdown menu: Sun Bather, Beach Umbrella, Full Protection)
+  * Watering Needs (dropdown menu: Heavy Drinker, Just One Please, Only on special occasions)
   * Notes (example: Fertilized on 03/28)
-  * Location (dropdown menu: Full sun, half sun, shade)
+* Comments on Plant Profiles (CRUD)
 
-
+10/04/22
 
  &nbsp;
  ## ***Technologies***
@@ -49,6 +50,7 @@
 
 &nbsp;
 ## ***Future Updates***
+* User-specific Profiles
 * Reminders
   * Water/Fertilize/Repot/Prune/Mist
     * Time (morning/afternoon/evening)
