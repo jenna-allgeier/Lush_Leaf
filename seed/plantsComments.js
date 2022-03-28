@@ -4,19 +4,9 @@ const { Plant, Comment } = require('../models')
 // Connect to the database
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-const createComments = async () => {
-    const comments = [
-        {
-            text: 'This plant looks so nice!'
-        }
-    ]
-    await Comment.insertMany(comments);
-    console.log('Created comments!');
-    return comments;
-}
 
-const createPlants = async (comments) => {
-    console.log(comments)
+const createPlants = async () => {
+    const comments = await Comment.find({})
 
     const plants = [
         { 
@@ -26,7 +16,7 @@ const createPlants = async (comments) => {
             sun_needs: "Beach Umbrella",
             drinking_needs: "Only on special occasions.",
             notes: "Last watered 03/05/22.",
-            comments: comments._id,
+            comments: comments[0]._id,
             image: "/assets/Fifi.png"
         },
         {
@@ -36,7 +26,7 @@ const createPlants = async (comments) => {
             sun_needs: "Beach Umbrella",
             drinking_needs: "Just one please.",
             notes: "Last watered/repotted 03/24/22.",
-            comments: comments._id,
+            comments: comments[1]._id,
             image: "/assets/Bluey.png"
         },
         {
@@ -46,7 +36,7 @@ const createPlants = async (comments) => {
             sun_needs: "Sun Bather",
             drinking_needs: "Heavy Drinker",
             notes: "Last watered 03/26/22. Last fertilized 03/20/22",
-            comments: comments._id,
+            comments: comments[2]._id,
             image: "/assets/Angelica.png"
         }
     
@@ -59,8 +49,7 @@ const createPlants = async (comments) => {
 
 
 const run = async () => {
-    const comments = await createComments();
-    await createPlants(comments);
+    await createPlants();
 
     db.close()
 }
