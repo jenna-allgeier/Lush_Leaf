@@ -22,6 +22,8 @@ app.use(urlencoded({required: false}))
 
 app.use('/', routes);
 
+app.use(express.static('assets'));
+
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))

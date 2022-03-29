@@ -1,3 +1,4 @@
+let mongoose = require('mongoose')
 const { Schema } = require('mongoose')
 
 const Plant = new Schema(
@@ -14,4 +15,6 @@ const Plant = new Schema(
   { timestamps: true }
 )
 
-module.exports = Plant
+// module.exports = Plant
+
+module.exports = mongoose.model('Plant', Plant)
