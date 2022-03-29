@@ -6,10 +6,12 @@ router.get('/', (req, res) => res.send('This is root!'))
 
 router.get('/plants', plantController.getAllPlants)
 
-router.post('/plants/create/:id', plantController.createPlant)
+router.get('/plants/:id', plantController.getPlantById)
 
-router.put('/plants/create/update', plantController.updatePlant)
+router.post('/plants/:id', plantController.createPlant)
 
-router.delete('/plants/delete/:id', plantController.deletePlant)
+router.put('/plants/:id', plantController.updatePlant)
+
+router.delete('/plants/:id', plantController.deletePlant)
 
 module.exports = router;
