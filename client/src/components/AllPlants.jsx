@@ -25,8 +25,8 @@ const AllPlants = () => {
     }
 
     return (
-        <div className="home">
-            <img src={logo} className="app-logo" alt="LUSH" />
+        <div className="plants-page">
+            {/* <img src={logo} className="app-logo" alt="LUSH" /> */}
             <div className="plants">
                 {
                     plants.map((plant) => {
