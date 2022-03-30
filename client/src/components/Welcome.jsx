@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Welcome = () => {
   return(
-  <div>
+  <div className='home'>
         <img src={logo} className="app-logo" alt="LUSH" />
         <Link to="/add-plant">
         <button className="add-plant-btn" type="submit">Add Your Plant!</button>
