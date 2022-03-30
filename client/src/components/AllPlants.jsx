@@ -2,7 +2,8 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import logo from '../assets/LUSH.png';
+import { Link } from 'react-router-dom'
+import PlantDetails from './PlantDetails'
 
 const AllPlants = () => {
     
@@ -10,14 +11,11 @@ const AllPlants = () => {
 
     const getAllPlants = async () => {
         const res = await axios.get('http://localhost:3001/plants')
-        console.log(res.data.plants)
         setPlants(res.data.plants)
     }
     useEffect(() => {
        getAllPlants();
       }, [])  
-
-    console.log(plants)
     
     let navigate = useNavigate();
     const plantDetails = (plant) => {
@@ -26,11 +24,9 @@ const AllPlants = () => {
 
     return (
         <div className="plants-page">
-            {/* <img src={logo} className="app-logo" alt="LUSH" /> */}
             <div className="plants">
                 {
                     plants.map((plant) => {
-                        console.log(plant)
                         return (
                             <div key={plant._id} onClick={() => plantDetails(plant)}>
                                 <p className="nickname">{plant.nickname}</p>

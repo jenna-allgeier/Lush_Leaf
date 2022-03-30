@@ -3,9 +3,10 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 // import PlantComments from './PlantComments';
 import AddComment from './AddComment';
+import { Link } from 'react-router-dom';
 
 
-const PlantDetails = () => {
+const PlantDetails = (props) => {
 
     const [ selectedPlant, setPlant ] = useState({})
 
@@ -44,15 +45,19 @@ const PlantDetails = () => {
             <div className="corner"/>
             <div className="details">
                 <img className="plant-image" src={selectedPlant.image} alt={selectedPlant.common_name} />
-                <h4 className = "nickname">{selectedPlant.nickname}</h4>
+                    <h3 className = "plant-common-name">{selectedPlant.common_name}</h3>
                 <div className = "add-details">
-                    <h5 className = "plant-common-name">{selectedPlant.common_name}</h5>
-                    <h5 className = "adoption-date">Adoption date:{selectedPlant.adoption_date}</h5>
-                    <h5 className = "sun-needs">Sun needs:{selectedPlant.sun_needs}</h5>
-                    <h5 className = "drinking-needs">Drinking needs:{selectedPlant.drinking_needs}</h5>
+                    <h4 className = "adoption-date">Adoption date: {selectedPlant.adoption_date}</h4>
+                    <h4 className = "sun-needs">Sun needs: {selectedPlant.sun_needs}</h4>
+                    <h4 className = "drinking-needs">Drinking needs: {selectedPlant.drinking_needs}</h4>
                 </div> 
                 <div>
-                    <h5 className = "notes">Notes:{selectedPlant.notes}</h5>
+                    <h4 className = "notes">Notes: {selectedPlant.notes}</h4>
+                </div>
+                <div>
+                <Link to="/update-plant">
+                    <button className="update-plant-btn" type="submit">Edit</button>
+                </Link>
                 </div>       
                 </div>
             {/* <div className="plant-comments">
