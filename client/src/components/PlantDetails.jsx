@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import PlantComments from './PlantComments';
-import AddPlant from './AddPlant';
+// import PlantComments from './PlantComments';
+import AddComment from './AddComment';
 
 
 const PlantDetails = () => {
@@ -55,16 +55,16 @@ const PlantDetails = () => {
                     <h5 className = "notes">Notes:{selectedPlant.notes}</h5>
                 </div>       
                 </div>
-            <div className="plant-comments">
+            {/* <div className="plant-comments">
                     <h2>Write Comment</h2>
                     <div className="write-container">
-                    <AddPlant id = {id} plants = {plants} selectedPlant = {selectedPlant}/>
+                    <AddComment id = {id} plants = {plants} selectedPlant = {selectedPlant}/>
                     </div>
                 <div className="comments-container">
                     <h3>Previous Comments</h3>
                     <PlantComments id = {id} plants = {plants} selectedPlant = {selectedPlant}/>
                 </div>  
-            </div>
+            </div> */}
         </div>
     )
 
