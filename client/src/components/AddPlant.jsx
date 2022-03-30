@@ -9,6 +9,7 @@ const AddPlant = (props) => {
     const [ adoptionDate, setAdoptionDate ] = useState('');
     const [ sunNeeds, setSunNeeds ] = useState('');
     const [ drinkingNeeds, setDrinkingNeeds ] = useState('');
+    const [ image, setImage ] = useState('');
     const [ notes, setNotes ] = useState('');
     const [ plantSent, setPlantSent ] = useState('');
 
@@ -31,6 +32,10 @@ const AddPlant = (props) => {
     const handleDrinkingNeeds = (e) => {
         setDrinkingNeeds(e.target.value)
         }
+    
+    const handleImage = (e) => {
+        setImage(e.target.value)
+        }
 
     const handleNotes = (e) => {
         setNotes(e.target.value)
@@ -43,6 +48,7 @@ const AddPlant = (props) => {
             adoption_date: adoptionDate,
             sun_needs: sunNeeds,
             drinking_needs: drinkingNeeds,
+            image: image,
             notes: notes
           })
           .then(function (response) {
@@ -97,6 +103,14 @@ const AddPlant = (props) => {
                 className='input-field'
                 placeholder="drinking needs" 
                 onChange={(e) => handleDrinkingNeeds(e, 'num')}
+                />
+            <input 
+                type="text" 
+                name="image"
+                className='input-field'
+                id='image'
+                placeholder="image URL" 
+                onChange={(e) => handleImage(e, 'num')}
                 />
             <input 
                 type="text" 
