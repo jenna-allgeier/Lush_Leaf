@@ -39,7 +39,7 @@ const AddComment = (props) => {
                 placeholder="Type your comment here..." 
                 onChange={(e) => handleComment(e, 'num')}
                 />
-            <button className="add-comment-button" type="submit" onClick={() => submitComment()}>Add your plant!</button>
+            <button className="add-comment-button" type="submit" onClick={() => submitComment()}>Add comment</button>
         </div>
     )
 }

@@ -77,14 +77,14 @@ const AddPlant = (props) => {
                 onChange={(e) => handleNickname(e, 'num')}
                 />
             <input 
-                type="number"
+                type="text"
                 name="common_name"
                 className='input-field'
                 placeholder="common/latin name"
                 onChange={(e) => handleCommonName(e, 'num')}
                 />
             <input 
-                type="text" 
+                type="date" 
                 name="adoption_date"
                 className='input-field'
                 placeholder="adoption date" 
