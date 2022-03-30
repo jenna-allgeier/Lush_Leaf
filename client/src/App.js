@@ -6,9 +6,13 @@ import Nav from './components/Nav';
 import AllPlants from './components/AllPlants'
 import AddPlant from './components/AddPlant';
 import PlantDetails from './components/PlantDetails';
+import { useState } from 'react';
 
 
-function App() {
+const App = () => {
+
+const [id, setId] = useState('')
+
   return (
     <div className="App">
       <header className="navbar">
@@ -17,8 +21,9 @@ function App() {
       <main className='main'>
         <Routes>
           <Route path="/" element={ <Welcome /> } />
-          <Route path="/add-plant" element={ <AddPlant /> } />
+          <Route path="/add-plant" element={ <AddPlant id={id} /> } />
           <Route path="/add-plant/:id" element={ <PlantDetails /> } />
+          <Route path="/all-plants" element={ <AllPlants /> } />
           {/* <Route path="/all-plants" element={ <AllPlants /> } /> */}
         </Routes>
       </main>
