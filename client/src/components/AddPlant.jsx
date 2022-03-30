@@ -42,7 +42,7 @@ const AddPlant = (props) => {
         }
 
     const submitPlant = async () => {
-        await axios.post(`http://localhost:3001/plants/${props.id}`, {
+        await axios.post(`http://localhost:3001/plants/create-plant`, {
             nickname: nickname,
             common_name: commonName,
             adoption_date: adoptionDate,

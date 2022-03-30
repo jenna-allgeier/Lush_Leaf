@@ -9,7 +9,7 @@ router.get('/plants', plantController.getAllPlants)
 
 router.get('/plants/:id', plantController.getPlantById)
 
-router.post('/plants/:id', plantController.createPlant)
+router.post('/plants/create-plant', plantController.createPlant)
 
 router.put('/plants/:id', plantController.updatePlant)
 

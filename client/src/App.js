@@ -13,8 +13,6 @@ import AddComment from './components/AddComment';
 
 const App = () => {
 
-const [id, setId] = useState('')
-
   return (
     <div className="App">
       <header className="navbar">
@@ -23,11 +21,11 @@ const [id, setId] = useState('')
       <main className='main'>
         <Routes>
           <Route path="/" element={ <Welcome /> } />
-          <Route path="/add-plant" element={ <AddPlant id={id} /> } />
-          <Route path="/add-plant/:id" element={ <PlantDetails id={id} /> } />
+          <Route path="/add-plant" element={ <AddPlant /> } />
+          <Route path="/add-plant/:id" element={ <PlantDetails /> } />
           <Route path="/all-plants" element={ <AllPlants /> } />
           <Route path="/all-plants/comments" element={ <AllComments /> } />
-          <Route path="/all-plants/comments/:id" element={ <AddComment id={id} /> } />
+          <Route path="/all-plants/comments/:id" element={ <AddComment /> } />
         </Routes>
       </main>
     </div>
