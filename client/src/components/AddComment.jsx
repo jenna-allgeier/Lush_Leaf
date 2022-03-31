@@ -6,6 +6,7 @@ const AddComment = (props) => {
 
     const [ comment, setComment ] = useState('');
     const [ commentSent, setCommentSent ] = useState('');
+    const [ comments, setComments ] = useState([])
 
     const handleComment = (e) => {
         setComment(e.target.value)
@@ -26,6 +27,8 @@ const AddComment = (props) => {
 
     useEffect(() => {
         return () => {
+            const res = axios.get('http://localhost:3001/comments')
+            setComments(res.data.comments)
             setCommentSent(false)
         }
        }, [commentSent])  
