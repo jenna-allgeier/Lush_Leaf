@@ -104,10 +104,11 @@
 /* Plants Page */
 .plants-page {
   display: inline-flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   align-content: center;
-  gap: 10px 20px;
+  gap: 10px 10px;
 }
 
 .plant {
@@ -121,7 +122,6 @@
 .plant-image {
   max-height: 150px;
   border-radius: 100px;
-  border: 1px solid black
 }
 
 .update-plant-btn {
