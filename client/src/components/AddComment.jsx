@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const AddComment = (props) => {
@@ -11,7 +11,7 @@ const AddComment = (props) => {
         setComment(e.target.value)
         }
 
-    const submitComment = async () => {
+    const submitComment = async (comment) => {
         await axios.post(`http://localhost:3001/comments/${props.id}`, {
             text: comment
           })
@@ -37,11 +37,11 @@ const AddComment = (props) => {
                     type="text"
                     name="text"
                     className='input-field'
-                    placeholder="Type your comment here..." 
+                    placeholder="What a nice plant!" 
                     onChange={(e) => handleComment(e, 'num')}
                     />
             </div>
-            <button className="btn" type="submit" onClick={() => submitComment()}>Add comment</button>
+                <button className="btn" id='add-comment' type="submit" onClick={() => submitComment(comment)}>Add comment</button>
         </div>
         
     )

@@ -26,8 +26,8 @@ const App = () => {
           <Route path="/all-plants/:id" element={ <PlantDetails /> } />
           <Route path="/all-plants" element={ <AllPlants /> } />
           <Route path="/update-plant/:id" element={ <UpdatePlant /> } />
-          <Route path="/all-plants/comments" element={ <AllComments /> } />
-          <Route path="/all-plants/comments/:id" element={ <AddComment /> } />
+          <Route path="/all-plants/:id" element={ <AllComments /> } />
+          <Route path="/all-plants/:id" element={ <AddComment /> } />
         </Routes>
       </main>
     </div>

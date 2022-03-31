@@ -1,4 +1,5 @@
 const Comment = require('../models/comment');
+// const Plant = require('../models/plant')
 
 const getAllComments = async (req, res) => {
     try {
