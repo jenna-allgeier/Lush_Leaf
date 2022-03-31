@@ -59,9 +59,6 @@ const PlantDetails = (props) => {
                 <div>
                     <div key={ id } onClick={() => linkToUpdatePlant({ id })}>
                         <button className="update-plant-btn" type="submit">Edit</button>
-                        <Link to="/all-plants">
-                            <button className="update-plant-btn">Delete</button>
-                        </Link>
                     </div>
                     
                 </div>       

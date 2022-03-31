@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const UpdatePlant = () => {
@@ -88,6 +88,10 @@ const UpdatePlant = () => {
         navigate('/all-plants')
     }
 
+    const deletePlant = async ({id}) => {
+        await axios.delete(`http://localhost:3001/plants/${id}`)
+    }
+
     return (
         <div className="add-plant-form">
             <h3>Edit Plant Profile</h3>
@@ -142,7 +146,13 @@ const UpdatePlant = () => {
                 placeholder={selectedPlant.notes}
                 onChange={(e) => handleNotes(e, 'num')}
                 />
-            <button className="add-plant-button" type="submit" onClick={() => submitUpdatedPlant({id})}>Update</button>
+            <div>
+                <button className="add-plant-button" type="submit" onClick={() => submitUpdatedPlant({id})}>Update</button>
+                <Link to="/all-plants">
+                    <button className="update-plant-btn" onClick={() => deletePlant({id})}>Delete</button>
+                </Link>
+            </div>
+            
         </div>
     )
 }
