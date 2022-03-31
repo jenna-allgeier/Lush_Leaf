@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 // import PlantComments from './PlantComments';
 import AddComment from './AddComment';
@@ -59,7 +59,11 @@ const PlantDetails = (props) => {
                 <div>
                     <div key={ id } onClick={() => linkToUpdatePlant({ id })}>
                         <button className="update-plant-btn" type="submit">Edit</button>
+                        <Link to="/all-plants">
+                            <button className="update-plant-btn">Delete</button>
+                        </Link>
                     </div>
+                    
                 </div>       
                 </div>
             {/* <div className="plant-comments">

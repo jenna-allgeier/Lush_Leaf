@@ -21,7 +21,6 @@ const AllPlants = () => {
     }
 
     return (
-        <div>
             <div className="plants-page">
                 {
                     plants.map((plant) => {
@@ -36,7 +35,6 @@ const AllPlants = () => {
                 }
 
             </div>
-        </div>
     )
 }
 
