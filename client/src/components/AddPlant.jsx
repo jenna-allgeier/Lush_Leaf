@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const AddPlant = (props) => {
@@ -120,7 +120,10 @@ const AddPlant = (props) => {
                 placeholder="notes" 
                 onChange={(e) => handleNotes(e, 'num')}
                 />
+            <Link to="/all-plants">
             <button className="add-plant-button" type="submit" onClick={() => submitPlant()}>Add your plant!</button>
+            </Link>
+            
         </div>
     )
 }

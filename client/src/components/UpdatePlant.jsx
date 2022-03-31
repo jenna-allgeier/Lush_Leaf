@@ -147,7 +147,9 @@ const UpdatePlant = () => {
                 onChange={(e) => handleNotes(e, 'num')}
                 />
             <div>
-                <button className="add-plant-button" type="submit" onClick={() => submitUpdatedPlant({id})}>Update</button>
+                <Link to="/all-plants">
+                    <button className="add-plant-button" type="submit" onClick={() => submitUpdatedPlant({id})}>Update</button>
+                </Link>
                 <Link to="/all-plants">
                     <button className="update-plant-btn" onClick={() => deletePlant({id})}>Delete</button>
                 </Link>
