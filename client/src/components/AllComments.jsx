@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const PlantComments = (props) => {
+const AllComments = (props) => {
 
     const [ comments, setComments ] = useState([])
 
@@ -30,4 +30,4 @@ const PlantComments = (props) => {
     
     )
 }
-export default PlantComments
+export default AllComments

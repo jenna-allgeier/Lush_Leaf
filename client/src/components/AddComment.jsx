@@ -31,16 +31,19 @@ const AddComment = (props) => {
        }, [commentSent])  
 
     return (
-        <div className="add-comment-form">
-            <input 
-                type="text"
-                name="text"
-                className='input-field'
-                placeholder="Type your comment here..." 
-                onChange={(e) => handleComment(e, 'num')}
-                />
-            <button className="add-comment-button" type="submit" onClick={() => submitComment()}>Add comment</button>
+        <div>
+            <div className="add-comment-form">
+                <input 
+                    type="text"
+                    name="text"
+                    className='input-field'
+                    placeholder="Type your comment here..." 
+                    onChange={(e) => handleComment(e, 'num')}
+                    />
+            </div>
+            <button className="btn" type="submit" onClick={() => submitComment()}>Add comment</button>
         </div>
+        
     )
 }
 
