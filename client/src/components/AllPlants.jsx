@@ -26,8 +26,8 @@ const AllPlants = () => {
                     plants.map((plant) => {
                         return (
                             <div className="plant" key={plant._id} onClick={() => plantDetails(plant)}>
-                                <p className="nickname">{plant.nickname}</p>
-                                <p className="common-name">{plant.common_name}</p>
+                                <h2 className="nickname">{plant.nickname}</h2>
+                                <h4 className="common-name">{plant.common_name}</h4>
                                 <img className="plant-image" src={plant.image} alt={plant.common_name} />
                             </div> 
                         )
