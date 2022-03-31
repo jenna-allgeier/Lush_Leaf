@@ -8,7 +8,7 @@ const AllComments = (props) => {
 
     // axios get for plant comments
     const getComments = async () => {
-        const res = await axios.get(`http://localhost:3001/comments/${props.id}`)
+        const res = await axios.get('http://localhost:3001/comments')
         console.log((res.data.comments))
         setComments(res.data.comments)
     }
