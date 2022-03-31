@@ -89,35 +89,35 @@ const UpdatePlant = () => {
                 type="text"
                 name="nickname"
                 className='input-field'
-                value={selectedPlant.nickname}
+                placeholder={selectedPlant.nickname}
                 onChange={(e) => handleNickname(e, 'num')}
                 />
             <input 
                 type="text"
                 name="common_name"
                 className='input-field'
-                value={selectedPlant.common_name}
+                placeholder={selectedPlant.common_name}
                 onChange={(e) => handleCommonName(e, 'num')}
                 />
             <input 
                 type="date" 
                 name="adoption_date"
                 className='input-field'
-                // value={selectedPlant.adoption_date}
+                placeholder={selectedPlant.adoption_date}
                 onChange={(e) => handleAdoptionDate(e, 'num')}
                 />
             <input 
                 type="text" 
                 name="sun_needs"
                 className='input-field'
-                value={selectedPlant.sun_needs} 
+                placeholder={selectedPlant.sun_needs} 
                 onChange={(e) => handleSunNeeds(e, 'num')}
                 />
             <input 
                 type="text" 
                 name="drinking_needs"
                 className='input-field'
-                value={selectedPlant.drinking_needs}
+                placeholder={selectedPlant.drinking_needs}
                 onChange={(e) => handleDrinkingNeeds(e, 'num')}
                 />
             <input 
@@ -125,7 +125,7 @@ const UpdatePlant = () => {
                 name="image"
                 className='input-field'
                 id='image'
-                value={selectedPlant.image}
+                placeholder={selectedPlant.image}
                 onChange={(e) => handleImage(e, 'num')}
                 />
             <input 
@@ -133,7 +133,7 @@ const UpdatePlant = () => {
                 name="notes"
                 className='input-field'
                 id='notes-section'
-                value={selectedPlant.notes}
+                placeholder={selectedPlant.notes}
                 onChange={(e) => handleNotes(e, 'num')}
                 />
             <button to="/all-plants" className="add-plant-button" type="submit" onClick={() => submitUpdatedPlant({id})}>Update</button>
