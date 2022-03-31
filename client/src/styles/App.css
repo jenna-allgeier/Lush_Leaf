@@ -102,17 +102,26 @@
 }
 
 /* Plants Page */
-.plants {
-  display: inline-grid;
-  align-items: center;
+.plants-page {
+  display: inline-flex;
   justify-content: center;
-  grid-template-columns: 50px auto 100px 1fr;
-  grid-column-gap: 100px;
+  align-items: center;
+  align-content: center;
+  gap: 10px 20px;
+}
+
+.plant {
+  display: inline-flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .plant-image {
-  max-height: 100px;
+  max-height: 150px;
   border-radius: 100px;
+  border: 1px solid black
 }
 
 .update-plant-btn {

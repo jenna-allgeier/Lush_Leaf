@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const UpdatePlant = () => {
@@ -18,7 +18,7 @@ const UpdatePlant = () => {
        return () => {
            setPlant({})
        }
-      }, [])
+      },)
 
     const [ nickname, setNickname ] = useState('');
     const [ commonName, setCommonName ] = useState('');
@@ -81,6 +81,11 @@ const UpdatePlant = () => {
             setPlantSent(false)
         }
        }, [plantSent])  
+    
+    // let navigate = useNavigate();
+    // const linkToUpdatePlant = () => {
+    //     navigate('/all-plants')
+    // }
 
     return (
         <div className="add-plant-form">

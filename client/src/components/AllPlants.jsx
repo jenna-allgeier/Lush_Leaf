@@ -2,8 +2,6 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
-import PlantDetails from './PlantDetails'
 
 const AllPlants = () => {
     
@@ -23,12 +21,12 @@ const AllPlants = () => {
     }
 
     return (
-        <div className="plants-page">
-            <div className="plants">
+        <div>
+            <div className="plants-page">
                 {
                     plants.map((plant) => {
                         return (
-                            <div key={plant._id} onClick={() => plantDetails(plant)}>
+                            <div className="plant" key={plant._id} onClick={() => plantDetails(plant)}>
                                 <p className="nickname">{plant.nickname}</p>
                                 <p className="common-name">{plant.common_name}</p>
                                 <img className="plant-image" src={plant.image} alt={plant.common_name} />
