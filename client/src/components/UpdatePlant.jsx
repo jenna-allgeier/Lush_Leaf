@@ -18,7 +18,7 @@ const UpdatePlant = () => {
        return () => {
            setPlant({})
        }
-      },)
+      }, [])
 
     const [ nickname, setNickname ] = useState('');
     const [ commonName, setCommonName ] = useState('');
@@ -70,6 +70,7 @@ const UpdatePlant = () => {
           .then(function (response) {
             setPlantSent(true);
             console.log(response);
+            linkToUpdatePlant();
           })
           .catch(function (error) {
             console.log(error);
@@ -82,10 +83,10 @@ const UpdatePlant = () => {
         }
        }, [plantSent])  
     
-    // let navigate = useNavigate();
-    // const linkToUpdatePlant = () => {
-    //     navigate('/all-plants')
-    // }
+    let navigate = useNavigate();
+    const linkToUpdatePlant = () => {
+        navigate('/all-plants')
+    }
 
     return (
         <div className="add-plant-form">
@@ -141,7 +142,7 @@ const UpdatePlant = () => {
                 placeholder={selectedPlant.notes}
                 onChange={(e) => handleNotes(e, 'num')}
                 />
-            <button to="/all-plants" className="add-plant-button" type="submit" onClick={() => submitUpdatedPlant({id})}>Update</button>
+            <button className="add-plant-button" type="submit" onClick={() => submitUpdatedPlant({id})}>Update</button>
         </div>
     )
 }
