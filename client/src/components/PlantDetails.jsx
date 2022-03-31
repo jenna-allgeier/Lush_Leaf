@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 // import PlantComments from './PlantComments';
 import AddComment from './AddComment';
-import { Link } from 'react-router-dom';
 
 
 const PlantDetails = (props) => {
@@ -33,14 +32,17 @@ const PlantDetails = (props) => {
        return () => {
            setPlant({})
        }
-      }, [])  
-
-
+      }, []) 
+    
+    let navigate = useNavigate();
+    const linkToUpdatePlant = ({ id }) => {
+        navigate(`/update-plant/${ id }`)
+    }
 
     return (
         <div className="plant-details">
             <div className="plant-header">
-                <h1 className="plant-nickname"> { selectedPlant.nickname} </h1>
+                <h1 className="plant-nickname"> {selectedPlant.nickname} </h1>
             </div>
             <div className="corner"/>
             <div className="details">
@@ -55,9 +57,9 @@ const PlantDetails = (props) => {
                     <h4 className = "notes">Notes: {selectedPlant.notes}</h4>
                 </div>
                 <div>
-                <Link to="/update-plant">
-                    <button className="update-plant-btn" type="submit">Edit</button>
-                </Link>
+                    <div key={ id } onClick={() => linkToUpdatePlant({ id })}>
+                        <button className="update-plant-btn" type="submit">Edit</button>
+                    </div>
                 </div>       
                 </div>
             {/* <div className="plant-comments">
