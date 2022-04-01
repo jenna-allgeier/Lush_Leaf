@@ -15,14 +15,14 @@
  &nbsp;
 
 ### MVP:
-* Plant Profiles:
+* Plant Profiles(CRUD):
   * Nickname
   * Latin Name/Common Name
   * Adoption Date
-  * Location (dropdown menu: Sun Bather, Beach Umbrella, Full Protection)
+  * Sun Needs (dropdown menu: Sun Bather, Beach Umbrella, Full Protection)
   * Watering Needs (dropdown menu: Heavy Drinker, Just One Please, Only on special occasions)
   * Notes (example: Fertilized on 03/28)
-* Comments on Plant Profiles (CRUD)
+* Comments on Plant Profiles
 &nbsp;
 &nbsp;
 ### ***App Screenshots:***
@@ -61,6 +61,7 @@
 
 &nbsp;
 ### ***Future Updates***
+* Image file upload feature
 * User-specific Profiles
 * Reminders
   * Water/Fertilize/Repot/Prune/Mist
@@ -69,6 +70,8 @@
     * Cycle (7 days)
 
 &nbsp;
+### **DEPLOYED APP AT [LUSH](https://murmuring-dusk-62029.herokuapp.com/)**
+
 ### **CHECK OUT MORE ON [TRELLO](https://trello.com/b/Eduy01oD/lushleaf)**
 
 ### **LINK TO THE [ERD](https://lucid.app/lucidchart/60793a02-73ed-49e9-ad0b-b060db19606e/edit?beaconFlowId=9A9EAD0C1BCB3380&invitationId=inv_f682b452-1db1-428b-9c85-ded2830fee60&page=0_0#)**
