@@ -4,12 +4,9 @@ import axios from 'axios';
 
 const AddComment = (props) => {
 
-    const [ comment, setComment ] = useState('');
-    const [ commentSent, setCommentSent ] = useState('');
-    const [ comments, setComments ] = useState([])
 
     const handleComment = (e) => {
-        setComment(e.target.value)
+        props.setComment(e.target.value)
         }
 
     const submitComment = async (comment) => {
@@ -17,24 +14,13 @@ const AddComment = (props) => {
             text: comment
           })
           .then(function (response) {
-            setCommentSent(!commentSent);
+            props.setCommentSent(!props.commentSent);
             console.log(response);
           })
           .catch(function (error) {
             console.log(error);
           });
     }
-
-    useEffect(() => {
-        const fetchData = async ()=> {
-            const res = await axios.get('http://localhost:3001/comments')
-            setComments(res.data.comments);
-            console.log(res.data.comments);
-        }
-        fetchData()
-        .catch(console.error);;
-       }, [commentSent])  
-
 
     return (
         <div>
@@ -47,7 +33,7 @@ const AddComment = (props) => {
                     onChange={(e) => handleComment(e, 'num')}
                     />
             </div>
-                <button className="btn" id='add-comment' type="submit" onClick={() => submitComment(comment)}>Add comment</button>
+                <button className="btn" id='add-comment' type="submit" onClick={() => submitComment(props.comment)}>Add comment</button>
         </div>
         
     )

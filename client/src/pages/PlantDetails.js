@@ -10,8 +10,13 @@ import AddComment from '../components/AddComment';
 const PlantDetails = () => {
 
     const [ selectedPlant, setPlant ] = useState({})
-
     const [ plants, setPlants ] = useState([])
+    const [ comments, setComments ] = useState([])
+
+
+    const [ comment, setComment ] = useState('');
+    const [ commentSent, setCommentSent ] = useState('');
+
 
     let { id } = useParams()
 
@@ -21,6 +26,15 @@ const PlantDetails = () => {
             setPlant({})
         }
        }, [])
+
+    useEffect(() => {
+    const fetchData = async ()=> {
+    
+    }
+    fetchData()
+    .catch(console.error);;
+    }, [comments])  
+
 
     const getAllPlants = async () => {
         const res = await axios.get('http://localhost:3001/plants')
@@ -68,11 +82,14 @@ const PlantDetails = () => {
             <div className="plant-comments">
                     <h2>Write Comment</h2>
                     <div className="write-container">
-                    <AddComment id = {id} plants = {plants} selectedPlant = {selectedPlant}/>
+                    <AddComment 
+                    id = {id} plants = {plants} selectedPlant = {selectedPlant}
+                    comment={comment} setComment={setComment} commentSent={commentSent} setCommentSent={setCommentSent}/>
                     </div>
                 <div className="comments-container">
                     <h3>Previous Comments</h3>
-                    <AllComments id = {id} plants = {plants} selectedPlant = {selectedPlant}/>
+                    <AllComments id = {id} plants = {plants} selectedPlant = {selectedPlant}
+                    comments={comments} setComments={setComments} comment={comment} setComment={setComment}/>
                 </div>  
             </div>
         </div>
