@@ -17,7 +17,7 @@ const AddComment = (props) => {
             text: comment
           })
           .then(function (response) {
-            setCommentSent(true);
+            setCommentSent(!commentSent);
             console.log(response);
           })
           .catch(function (error) {
@@ -26,12 +26,15 @@ const AddComment = (props) => {
     }
 
     useEffect(() => {
-        return () => {
-            const res = axios.get('http://localhost:3001/comments')
-            setComments(res.data.comments)
-            setCommentSent(false)
+        const fetchData = async ()=> {
+            const res = await axios.get('http://localhost:3001/comments')
+            setComments(res.data.comments);
+            console.log(res.data.comments);
         }
+        fetchData()
+        .catch(console.error);;
        }, [commentSent])  
+
 
     return (
         <div>

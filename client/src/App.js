@@ -10,6 +10,7 @@ import { useState } from 'react';
 import AllComments from './components/AllComments';
 import AddComment from './components/AddComment';
 import UpdatePlant from './components/UpdatePlant';
+import InputPlant from './pages/inputPlant';
 
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/update-plant/:id" element={ <UpdatePlant /> } />
           <Route path="/all-plants/:id" element={ <AllComments /> } />
           <Route path="/all-plants/:id" element={ <AddComment /> } />
+          <Route path="/test" element={ <InputPlant /> } />
         </Routes>
       </main>
     </div>
