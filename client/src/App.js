@@ -5,12 +5,12 @@ import Welcome from './components/Welcome';
 import Nav from './components/Nav';
 import AllPlants from './components/AllPlants'
 import AddPlant from './components/AddPlant';
-import PlantDetails from './components/PlantDetails';
-import { useState } from 'react';
+import PlantDetails from './pages/PlantDetails';
 import AllComments from './components/AllComments';
 import AddComment from './components/AddComment';
 import UpdatePlant from './components/UpdatePlant';
 import InputPlant from './pages/inputPlant';
+import PlantProfile from './pages/PlantDetails';
 
 
 const App = () => {
@@ -29,7 +29,7 @@ const App = () => {
           <Route path="/update-plant/:id" element={ <UpdatePlant /> } />
           <Route path="/all-plants/:id" element={ <AllComments /> } />
           <Route path="/all-plants/:id" element={ <AddComment /> } />
-          <Route path="/test" element={ <InputPlant /> } />
+          <Route path="/all-plants/:id" element={ <PlantProfile /> } />
         </Routes>
       </main>
     </div>

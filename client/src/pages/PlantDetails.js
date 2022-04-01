@@ -1,17 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-import AllComments from './AllComments';
-import AddComment from './AddComment';
+// import AllPlants from '../components/AllPlants';
+// import AddPlant from '../components/AddPlant';
+import AllComments from '../components/AllComments';
+import AddComment from '../components/AddComment';
 
 
-const PlantDetails = (props) => {
+const PlantDetails = () => {
 
     const [ selectedPlant, setPlant ] = useState({})
 
     const [ plants, setPlants ] = useState([])
 
     let { id } = useParams()
+
+    useEffect(() => {
+        getAllPlants();
+        return () => {
+            setPlant({})
+        }
+       }, [])
 
     const getAllPlants = async () => {
         const res = await axios.get('http://localhost:3001/plants')
@@ -25,14 +34,7 @@ const PlantDetails = (props) => {
 
         )
         setPlant(currentPlant)
-    }
-    
-    useEffect(() => {
-       getAllPlants();
-       return () => {
-           setPlant({})
-       }
-      }, []) 
+    } 
     
     let navigate = useNavigate();
     const linkToUpdatePlant = ({ id }) => {
