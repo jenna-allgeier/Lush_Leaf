@@ -77,7 +77,7 @@
 &nbsp;
 
 ### ***Credits***
-#### **[Peperomia Image]("https://i.pinimg.com/originals/bb/fa/9f/bbfa9f53b8c889794410f3bd11fbe3e5.jpg")**
+#### **[Peperomia Image](https://i.pinimg.com/originals/bb/fa/9f/bbfa9f53b8c889794410f3bd11fbe3e5.jpg)**
 #### **[Money Tree Image](https://www.englishgardens.com/wp-content/uploads/House-Plant-Money-Tree-1.jpg)**
 #### **[Fiddle Leaf Fig Image](https://cmsmedia.remodelista.com/wp-content/uploads/2019/01/fiddle-leaf-fig-tree-ikea.png)**
 #### **[Ficus Bonsai Image](https://i.ebayimg.com/images/g/QQkAAOSwuxFYtZKt/s-l640.jpg)**
