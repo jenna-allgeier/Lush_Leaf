@@ -15,6 +15,6 @@ const Plant = new Schema(
   { timestamps: true }
 )
 
-// module.exports = Plant
+module.exports = Plant
 
-module.exports = mongoose.model('Plant', Plant)
+// module.exports = mongoose.model('Plant', Plant)

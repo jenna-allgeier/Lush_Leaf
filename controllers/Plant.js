@@ -1,4 +1,4 @@
-const Plant = require('../models/plant');
+const { Plant, Comment } = require('../models');
 
 const getAllPlants = async (req, res) => {
     try {
@@ -10,9 +10,11 @@ const getAllPlants = async (req, res) => {
 }
 
 const getPlantById = async (req, res) => {
+    console.log("plant")
     try {
         const { id } = req.params;
-        const plant = await Plant.findById(id)
+        const plant = await Plant.findById(id).populate("comments")
+        console.log(plant)
         if (plant) {
             return res.status(200).json({ plant });
         }

@@ -8,5 +8,5 @@ const Comment = new Schema(
   { timestamps: true }
 )
 
-// module.exports = Comment
-module.exports = mongoose.model('Comment', Comment)
+module.exports = Comment
+// module.exports = mongoose.model('Comment', Comment)

@@ -1,4 +1,5 @@
 const Comment = require('../models/comment');
+const plant = require('../models/plant');
 const Plant = require('../models/plant')
 
 const getAllComments = async (req, res) => {
@@ -27,6 +28,9 @@ const createComment = async (req, res) => {
     try {
         const comment = await new Comment(req.body)
         await comment.save()
+        const plant = await Plant.findById(req.params.id)
+        plant.comments.push(comment._id)
+        await plant.save()
         return res.status(201).json({
             comment,
         });

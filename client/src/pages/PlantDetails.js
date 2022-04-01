@@ -21,24 +21,25 @@ const PlantDetails = () => {
     let { id } = useParams()
 
     useEffect(() => {
-        getAllPlants();
+
+        getPlant();
         return () => {
             setPlant({})
         }
-       }, [])
+       }, [comment])
 
-    useEffect(() => {
-    const fetchData = async ()=> {
+    // useEffect(() => {
+    // const fetchData = async ()=> {
     
-    }
-    fetchData()
-    .catch(console.error);;
-    }, [comments])  
+    // }
+    // fetchData()
+    // .catch(console.error);;
+    // }, [comments])  
 
 
-    const getAllPlants = async () => {
-        const res = await axios.get('http://localhost:3001/plants')
-        setPlants(res.data.plants)
+    const getPlant = async () => {
+        const res = await axios.get(`http://localhost:3001/plants/${id}`)
+        setPlant(res.data.plant)
 
         updateCurrentPlant(res.data.plants);
     }
@@ -58,7 +59,7 @@ const PlantDetails = () => {
     return (
         <div className="plant-details">
             <div className="plant-header">
-                <h1 className="plant-nickname"> {selectedPlant.nickname} </h1>
+                <h1 className="plant-nickname"> {plants.nickname} </h1>
             </div>
             <div className="corner"/>
             <div className="details">
@@ -76,7 +77,6 @@ const PlantDetails = () => {
                     <div key={ id } onClick={() => linkToUpdatePlant({ id })}>
                         <button className="btn" type="submit">Edit</button>
                     </div>
-                    
                 </div>       
                 </div>
             <div className="plant-comments">
