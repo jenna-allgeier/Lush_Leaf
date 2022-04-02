@@ -17,7 +17,7 @@ const createPlants = async () => {
             drinking_needs: "Only on special occasions.",
             notes: "Last watered 03/05/22.",
             comments: comments[0]._id,
-            image: "/assets/Fifi.png"
+            image: "https://cmsmedia.remodelista.com/wp-content/uploads/2019/01/fiddle-leaf-fig-tree-ikea.png"
         },
         {
             nickname: "Bluey",
@@ -26,8 +26,8 @@ const createPlants = async () => {
             sun_needs: "Beach Umbrella",
             drinking_needs: "Just one please.",
             notes: "Last watered/repotted 03/24/22.",
-            comments: comments[1]._id,
-            image: "/assets/Bluey.png"
+            comments: [comments[1]._id, comments[2]._id],
+            image: "https://i0.wp.com/laidbackgardener.blog/wp-content/uploads/2019/01/20190123b-stayathomeplantmom-pinterest.com_-1.jpg?resize=950%2C942&ssl=1"
         },
         {
             nickname: "Angelica",
@@ -36,8 +36,8 @@ const createPlants = async () => {
             sun_needs: "Sun Bather",
             drinking_needs: "Heavy Drinker",
             notes: "Last watered 03/26/22. Last fertilized 03/20/22",
-            comments: comments[2]._id,
-            image: "/assets/Angelica.png"
+            comments: [],
+            image: "https://i.ebayimg.com/images/g/QQkAAOSwuxFYtZKt/s-l640.jpg"
         }
     
     ]

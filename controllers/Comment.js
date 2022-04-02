@@ -5,7 +5,9 @@ const Plant = require('../models/plant')
 const getCommentsByPlant = async (req, res) => {
     try {
         const { id } = req.params;
-        const comments = await Comment.findById(id)
+        console.log("id: ", id)
+        const plant = await Plant.findById(id)
+        
         if (comments) {
             return res.status(200).json({ comments });
         }
@@ -32,7 +34,7 @@ const createComment = async (req, res) => {
         plant.comments.push(comment._id)
         await plant.save()
         return res.status(201).json({
-            comment,
+            comment
         });
     } catch (error) {
         return res.status(500).json({ error: error.message })

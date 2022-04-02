@@ -28,17 +28,9 @@ const PlantDetails = () => {
        
     const getPlant = async () => {
         const res = await axios.get(`http://localhost:3001/plants/${id}`)
+        console.log("plant data: ", res.data.plant)
         setPlant(res.data.plant)
-
-        updateCurrentPlant(res.data.plants);
     }
-    const updateCurrentPlant = (plants) => {
-        let currentPlant = plants.find(
-            (plant) => plant._id === id
-
-        )
-        setPlant(currentPlant)
-    } 
     
     let navigate = useNavigate();
     const linkToUpdatePlant = ({ id }) => {

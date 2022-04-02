@@ -14,7 +14,7 @@ const getPlantById = async (req, res) => {
     try {
         const { id } = req.params;
         const plant = await Plant.findById(id).populate("comments")
-        console.log(plant)
+        console.log("plant: ", plant)
         if (plant) {
             return res.status(200).json({ plant });
         }
