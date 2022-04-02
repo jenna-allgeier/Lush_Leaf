@@ -27,13 +27,7 @@ const PlantDetails = () => {
        }, []) 
 
     useEffect(() => {
-
-        getPlant();
-        console.log(selectedPlant.comments)
-        return () => {
-            setComments(selectedPlant.comments);
-            
-        }
+        getComments();
        }, [commentSent]) 
 
     const handleCommentChange = (comment) => {
