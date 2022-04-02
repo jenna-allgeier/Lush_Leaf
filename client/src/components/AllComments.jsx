@@ -4,9 +4,11 @@ import axios from 'axios';
 
 const AllComments = (props) => {
 
+    let { id } = useParams()
+
     // axios get for plant comments
     const getComments = async () => {
-        const res = await axios.get('http://localhost:3001/comments')
+        const res = await axios.get(`http://localhost:3001/plants/${id}/comments`)
         props.setComments(res.data.comments)
     }
     // axios post for new comments

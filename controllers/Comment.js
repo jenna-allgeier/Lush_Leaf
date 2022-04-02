@@ -2,25 +2,25 @@ const Comment = require('../models/comment');
 const plant = require('../models/plant');
 const Plant = require('../models/plant')
 
+const getCommentsByPlant = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const comments = await Comment.findById(id)
+        if (comments) {
+            return res.status(200).json({ comments });
+        }
+        return res.status(404).send('Comment with the specified ID does not exists');
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
 const getAllComments = async (req, res) => {
     try {
         const comments = await Comment.find()
     return res.status(200).json({ comments })
 } catch (error) {
     return res.status(500).send(error.message);
-    }
-}
-
-const getCommentById = async (req, res) => {
-    try {
-        const { id } = req.params;
-        const comment = await Comment.findById(id)
-        if (comment) {
-            return res.status(200).json({ comment });
-        }
-        return res.status(404).send('Comment with the specified ID does not exists');
-    } catch (error) {
-        return res.status(500).send(error.message);
     }
 }
 
@@ -70,5 +70,5 @@ module.exports = {
     updateComment,
     getAllComments,
     deleteComment,
-    getCommentById
+    getCommentsByPlant
 }

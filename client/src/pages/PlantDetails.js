@@ -11,12 +11,9 @@ const PlantDetails = () => {
 
     const [ selectedPlant, setPlant ] = useState({})
     const [ plants, setPlants ] = useState([])
-    const [ comments, setComments ] = useState([])
-
-
     const [ comment, setComment ] = useState('');
+    const [ comments, setComments ] = useState([])
     const [ commentSent, setCommentSent ] = useState('');
-
 
     let { id } = useParams()
 
@@ -26,17 +23,9 @@ const PlantDetails = () => {
         return () => {
             setPlant({})
         }
-       }, [comment])
+       }, [comment]) 
 
-    // useEffect(() => {
-    // const fetchData = async ()=> {
-    
-    // }
-    // fetchData()
-    // .catch(console.error);;
-    // }, [comments])  
-
-
+       
     const getPlant = async () => {
         const res = await axios.get(`http://localhost:3001/plants/${id}`)
         setPlant(res.data.plant)
@@ -59,7 +48,7 @@ const PlantDetails = () => {
     return (
         <div className="plant-details">
             <div className="plant-header">
-                <h1 className="plant-nickname"> {plants.nickname} </h1>
+                <h1 className="plant-nickname"> {selectedPlant.nickname} </h1>
             </div>
             <div className="corner"/>
             <div className="details">
