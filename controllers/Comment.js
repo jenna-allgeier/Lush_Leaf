@@ -1,6 +1,5 @@
-const Comment = require('../models/comment');
+const { Plant, Comment } = require('../models');
 const plant = require('../models/plant');
-const Plant = require('../models/plant')
 
 const getCommentsByPlant = async (req, res) => {
     try {
@@ -29,6 +28,7 @@ const getAllComments = async (req, res) => {
 const createComment = async (req, res) => {
     try {
         const comment = await new Comment(req.body)
+        console.log("create comment: ", comment)
         await comment.save()
         const plant = await Plant.findById(req.params.id)
         plant.comments.push(comment._id)

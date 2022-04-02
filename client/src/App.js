@@ -6,7 +6,6 @@ import Nav from './components/Nav';
 import AllPlants from './components/AllPlants'
 import AddPlant from './components/AddPlant';
 import PlantDetails from './pages/PlantDetails';
-import AllComments from './components/AllComments';
 import AddComment from './components/AddComment';
 import UpdatePlant from './components/UpdatePlant';
 import InputPlant from './pages/inputPlant';
@@ -27,7 +26,6 @@ const App = () => {
           <Route path="/all-plants/:id" element={ <PlantDetails /> } />
           <Route path="/all-plants" element={ <AllPlants /> } />
           <Route path="/update-plant/:id" element={ <UpdatePlant /> } />
-          <Route path="/all-plants/:id" element={ <AllComments /> } />
           <Route path="/all-plants/:id" element={ <AddComment /> } />
           <Route path="/all-plants/:id" element={ <PlantProfile /> } />
         </Routes>
