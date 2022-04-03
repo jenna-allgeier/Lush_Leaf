@@ -36,13 +36,13 @@ const PlantDetails = () => {
 
        
     const getPlant = async () => {
-        const res = await axios.get(`http://localhost:3001/plants/${id}`)
+        const res = await axios.get(`/plants/${id}`)
         console.log("plant data: ", res.data.plant)
         setPlant(res.data.plant)
     }
 
     const getComments = async () => {
-        const res = await axios.get(`http://localhost:3001/plants/${id}`)
+        const res = await axios.get(`/plants/${id}`)
         console.log(res.data.plant.comments)
         setComments(res.data.plant.comments)
     }

@@ -10,7 +10,7 @@ const AddComment = (props) => {
         }
 
     const submitComment = async (comment) => {
-        await axios.post(`http://localhost:3001/comments/${props.id}`, {
+        await axios.post(`/comments/${props.id}`, {
             text: comment
           })
           .then(function (response) {

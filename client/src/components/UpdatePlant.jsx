@@ -9,7 +9,7 @@ const UpdatePlant = () => {
     let { id } = useParams()
 
     const getPlantById = async () => {
-        const res = await axios.get(`http://localhost:3001/plants/${id}`)
+        const res = await axios.get(`/plants/${id}`)
         setPlant(res.data.plant)
     }
 
@@ -58,7 +58,7 @@ const UpdatePlant = () => {
         }
 
     const submitUpdatedPlant = async ({id}) => {
-        await axios.put(`http://localhost:3001/plants/${id}`, {
+        await axios.put(`/plants/${id}`, {
             nickname: nickname,
             common_name: commonName,
             adoption_date: adoptionDate,
@@ -89,7 +89,7 @@ const UpdatePlant = () => {
     }
 
     const deletePlant = async ({id}) => {
-        await axios.delete(`http://localhost:3001/plants/${id}`)
+        await axios.delete(`/plants/${id}`)
     }
 
     return (

@@ -9,7 +9,7 @@ const UpdateComment = () => {
     let { id } = useParams()
 
     const getCommentById = async () => {
-        const res = await axios.get(`http://localhost:3001/comments/${id}`)
+        const res = await axios.get(`/comments/${id}`)
         setComment(res.data.comment)
     }
 
@@ -28,7 +28,7 @@ const UpdateComment = () => {
         }
 
     const submitUpdatedComment = async ({id}) => {
-        await axios.put(`http://localhost:3001/comments/${id}`, {
+        await axios.put(`/comments/${id}`, {
             text: text,
           })
           .then(function (response) {
@@ -53,7 +53,7 @@ const UpdateComment = () => {
     }
 
     // const deleteComment = async ({id}) => {
-    //     await axios.delete(`http://localhost:3001/comments/${id}`)
+    //     await axios.delete(`/comments/${id}`)
     // }
 
     return (

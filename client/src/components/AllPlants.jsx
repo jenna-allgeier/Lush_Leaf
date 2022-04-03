@@ -8,7 +8,7 @@ const AllPlants = () => {
     const [ plants, setPlants ] = useState([])
 
     const getAllPlants = async () => {
-        const res = await axios.get('http://localhost:3001/plants')
+        const res = await axios.get('/plants')
         console.log(res.data.plants)
         setPlants(res.data.plants)
     }
